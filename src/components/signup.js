@@ -33,7 +33,7 @@ function Signup() {
 
         const {name,email,password} = credentials ; 
 
-        const response = await fetch(`${baseUrl}/createuser`,{
+        const response = await fetch(`/api/auth/createuser`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'            

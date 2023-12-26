@@ -5,7 +5,6 @@ import addNotification from 'react-push-notification';
 
 function Login() {
 
-    const baseUrl = process.env.REACT_APP_BASE_URL_A
     const navigate = useNavigate();
 
     const [credentials,setCredentials] = useState({email:'',password:''});
@@ -41,7 +40,7 @@ function Login() {
     const handleClick = async (e)=>{
         e.preventDefault();
         
-        const response = await fetch(`${baseUrl}/login`,{
+        const response = await fetch('/api/auth/login',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'            
