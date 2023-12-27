@@ -1,6 +1,5 @@
 import react, { useState } from "react";
 import NoteContext from "./notesContext";
-import addNotification from "react-push-notification";
 
 const NoteState = (props)=>{
     
@@ -9,40 +8,7 @@ const NoteState = (props)=>{
 
     const [notes,setNotes] = useState(initialNotes);
 
-    // to push-notifications 
-
-    const notifyAddedNote = ()=>{
-        addNotification({
-          title:"success",
-          message: "You have Added the Note sucessfully",
-          theme: 'white',
-          closeButton: "X",
-          duration:4000,
-          position:'bottom-right',
-      });
-      }
-
-    const notifyDeletedNote = ()=>{
-        addNotification({
-          title:"success",
-          message: "You have deleted the Note sucessfully",
-          theme: "white",
-          closeButton: "X",
-          duration:4000,
-          position:'bottom-right',
-      });
-      }
-
-    const notifyEditedNote = ()=>{
-        addNotification({
-          title:"success",
-          message: "You have Updated the Note sucessfully",
-          theme: "white",
-          closeButton: "X",
-          duration:4000,
-          position:'bottom-right',
-      });
-      }
+    
 
     // to get all notes 
     
@@ -76,7 +42,7 @@ const NoteState = (props)=>{
         const note = await response.json();
         setNotes(notes.concat(note))
 
-        notifyAddedNote();
+        
     }
 
     // Delete a Note
@@ -98,7 +64,7 @@ const NoteState = (props)=>{
         })
         setNotes(newNotes);
 
-        notifyDeletedNote();
+        
     }
 
     // Edit a Note 
@@ -133,7 +99,6 @@ const NoteState = (props)=>{
           }
           setNotes(newNotes);
 
-          notifyEditedNote();
     }
 
     

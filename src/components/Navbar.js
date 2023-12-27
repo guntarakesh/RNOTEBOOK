@@ -1,24 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link,useLocation,Outlet, useNavigate } from 'react-router-dom'
-import addNotification from 'react-push-notification';
 function Navbar() {
     const navigate = useNavigate();
 
-    const notifyLogout = ()=>{
-        addNotification({
-          title:"success",
-          message: "You have sucessfully Logged Out",
-          theme: "white",
-          closeButton: "X",
-          duration:4000,
-          position:'bottom-right'
-      });
-      }
 
     const handleClick = ()=>{
         localStorage.removeItem('token');
         navigate('/login')
-        notifyLogout();
+        
     }
     return (
         <>

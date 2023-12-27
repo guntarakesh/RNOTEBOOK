@@ -1,31 +1,12 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import addNotification from 'react-push-notification';
 function Signup() {
     const baseUrl = process.env.REACT_APP_BASE_URL_A
     const [credentials,setCredentials] = useState({name:'',email:'',password:'',cpassword:''});
     const [error,setError] = useState('')
-    const notifySucess = ()=>{
-      addNotification({
-        title:"success",
-        message: "You have sucessfully signed up",
-        theme: "white",
-        closeButton: "X",
-        duration:4000,
-        position:'bottom-right'
-    });
-    }
+   
 
-    const notifyError = ()=>{
-      addNotification({
-        title:"error",
-        message: "please enter valid deatils",
-        theme: "red",
-        closeButton: "X",
-        duration:4000,
-        position:'bottom-right'
-    });
-    }
+  
 
     const navigate = useNavigate();
     const handleClick = async (e)=>{
@@ -47,7 +28,7 @@ function Signup() {
         {
             
             navigate('/login');
-            notifySucess();
+            
         }
         else{
             
@@ -56,7 +37,7 @@ function Signup() {
             setTimeout(()=>{
              setError('')
             },3000)
-            notifyError();
+           
         }
         
     }

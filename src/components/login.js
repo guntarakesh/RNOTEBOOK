@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import addNotification from 'react-push-notification';
 
 
 function Login() {
@@ -11,27 +10,9 @@ function Login() {
 
     const [error,setError] = useState('')
 
-    const notifySucess = ()=>{
-      addNotification({
-        title:"success",
-        message: "You haveLogged in sucessfully ",
-        theme: "white",
-        closeButton: "X",
-        duration:4000,
-        position:'bottom-right'
-    });
-    }
+   
 
-    const notifyError = ()=>{
-      addNotification({
-        title:"error",
-        message: "please enter valid deatils",
-        theme: "red",
-        closeButton: "X",
-        duration:4000,
-        position:'bottom-right'
-    });
-    }
+    
 
   
 
@@ -57,14 +38,8 @@ function Login() {
             // save the auth token and redirect 
             localStorage.setItem('token',json.authToken);
             navigate('/');
-            // <Notification 
-            // title = "Warning"
-            // subtitle= "Please fill it"
-            // message = "You have to enter name"
-            // theme = "red"
-            // closeButton = "X"
-            // />
-            notifySucess();
+          
+         
             
         }
         else {
@@ -73,7 +48,7 @@ function Login() {
             setTimeout(()=>{
               setError('')
             },3000)
-            notifyError();
+            
         }
         
     }
@@ -86,7 +61,7 @@ function Login() {
     <div className='my-5 container'>
       
         <h3>Login below to continue </h3>
-        {/* <button onClick={notify}>clcik</button> */}
+        
     {/* add the form here which is login form for email and password using bootstrap  */}
     <form onSubmit={handleClick}>
   <div className="my-3 form-group">
