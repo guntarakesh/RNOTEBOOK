@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 function Signup() {
-  const baseUrl = process.env.REACT_APP_BASE_URL_A
+  
   const [credentials, setCredentials] = useState({ name: '', email: '', password: '', cpassword: '' });
   const [error, setError] = useState('')
 
@@ -19,7 +19,7 @@ function Signup() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ name, email, password })
+      body: JSON.stringify({ name, email, password }),
     });
 
     const json = await response.json();

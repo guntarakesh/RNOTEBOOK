@@ -19,6 +19,7 @@ function AddNote() {
   return (
     <div className='my-3 container'>
       <h3>Add Notes</h3>
+   
       <form role='form' onSubmit={handleClick}>
         <div className="mb-3 m-30">
           <label htmlFor='title' className="form-label">Title</label>

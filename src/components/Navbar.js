@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link,useLocation,Outlet, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Link,Outlet, useNavigate } from 'react-router-dom'
 function Navbar() {
     const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">RNotebook</a>
+                    <a style={{color:'blue',fontWeight:'bold'}} className="navbar-brand" href="/">&#x270d;RNotebook</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

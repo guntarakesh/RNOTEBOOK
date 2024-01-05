@@ -1,9 +1,9 @@
-import react, { useState } from "react";
+import  { useState } from "react";
 import NoteContext from "./notesContext";
 
 const NoteState = (props)=>{
     
-    const baseUrl = process.env.REACT_APP_BASE_URL
+   
     const initialNotes = []
 
     const [notes,setNotes] = useState(initialNotes);
@@ -50,7 +50,8 @@ const NoteState = (props)=>{
     const deleteNote = async(id)=>{
         
         // delete a note from server side 
-
+        
+        // eslint-disable-next-line
         const response = await fetch(`/api/notes/deletenote/${id}`,{
             method:'DELETE',
             headers:{
@@ -80,7 +81,7 @@ const NoteState = (props)=>{
             },
             body: JSON.stringify({title,description,tag})
         });
-
+          // eslint-disable-next-line
         const json = response.json();
 
 

@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://custom-api-rnotebook.vercel.app/",
+  
+  "proxy": "https://rnotebookapi.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",

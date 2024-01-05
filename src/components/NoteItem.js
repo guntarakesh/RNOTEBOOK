@@ -26,7 +26,7 @@ function NoteItem(props) {
         <p>{note.description}</p>
         <footer className="blockquote-footer"> {note.tag} <cite title="Source Title"></cite></footer>
       </blockquote>
-      <a onClick={()=>{updateNote(note)}} className="btn btn-success m-1">&#x270e;</a>
+      <a  onClick={()=>{updateNote(note)}} className="btn btn-success m-1">&#x270e;</a>
       <a  onClick={()=>{deleteNote(note._id)}} className="btn btn-danger m-1">&#x2716;</a>
     </div>
   </div>
